@@ -1,6 +1,6 @@
+import { router } from "./../app.router";
 import { Component } from "@angular/core";
 import { BankService } from "../bank.service";
-import { router } from "./app.router";
 
 @Component({
   selector: "app-teller",

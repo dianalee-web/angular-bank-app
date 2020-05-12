@@ -1,4 +1,6 @@
-
+body {
+  background: yellow;
+}
 .main {
   display: flex;
   flex-flow: row nowrap;
@@ -19,5 +21,24 @@
 }
 
 .options-item {
+}
 
+button {
+  display: inline-block;
+  width: 100%;
+  border: 2px solid darkslategrey;
+  color: darkslategray;
+  margin: 10px 0;
+  padding: 5px;
+}
+button:hover {
+  color: white;
+  background: darkslategray;
+}
+input {
+  width: 94%;
+  text-align: center;
+  padding: 5px;
+  height: 30px;
+  cursor: pointer;
 }

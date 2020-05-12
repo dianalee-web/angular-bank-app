@@ -4,11 +4,10 @@
   list-style: none;
   justify-content: space-between;
   align-items: stretch;
-  background-color: coral;
+  /* background-color: coral; */
 }
 .nav li {
   margin: 0 auto;
 }
 a {
-  color: #fff;
 }
