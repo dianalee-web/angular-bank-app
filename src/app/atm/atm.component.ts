@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { BankService } from "../bank.service";
-// import { FormsModule } from '@angular/forms'
+import { UpperCasePipe } from "@angular/common";
 
 @Component({
   selector: "app-atm",
@@ -9,14 +9,20 @@ import { BankService } from "../bank.service";
 })
 export class AtmComponent {
   userInputValue: number;
+  bankAccount = this.bankService.account;
 
-  constructor() {}
+  constructor(public bankService: BankService) {}
   withdraw() {
-    alert(this.userInputValue);
+    this.bankAccount.balance = this.bankAccount.balance - this.userInputValue;
+    // this.userInputValue = "";
   }
   deposit() {
-    alert(this.userInputValue);
+    this.bankAccount.balance = this.bankAccount.balance + this.userInputValue;
   }
-  getBalance() {}
-  transactions() {}
+  getBalance() {
+    alert("Current Balance: " + this.bankAccount.balance);
+  }
+  transactions() {
+    alert(this.bankAccount.account);
+  }
 }

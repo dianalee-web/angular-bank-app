@@ -2,8 +2,18 @@
 
 <div class="main">
   <section class="display">
-    > Welcome, {{ this.account.fname }}
+    <h3>> Welcome, {{ this.bankAccount.fname }} !!</h3>
+    <h4><span></span></h4>
     <br />
+    <br />
+    <br />
+    <br />
+    <h4>Current Balance: {{ this.bankService.account.balance | currency }}</h4>
+    <!-- <h4>Recent Transactions</h4>
+    <p *ngFor="let transaction of this.bankAccount.transactions">
+      {{ transaction.date }} {{ transaction.type | uppercase }}
+      {{ transaction.amount | currency }}
+    </p> -->
   </section>
   <aside class="options">
     <ul class="options-list">
@@ -19,8 +29,8 @@
       <li class="options-item">
         <button (click)="deposit()" class="btn">Deposit Money</button>
       </li>
-      <li class="options-item btn">
-        <button (click)="getBalance()">Balance Inquiry</button>
+      <li class="options-item">
+        <button (click)="getBalance()" class="btn">Balance Inquiry</button>
       </li>
       <li class="options-item btn">
         <button (click)="transactions()">Transactions History</button>

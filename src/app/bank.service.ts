@@ -15,7 +15,7 @@ export class BankService {
       zip: 12345,
       country: "canada",
     },
-    balance: 0.01,
+    balance: 240.01,
     currency: "usd",
     transactions: [
       {
