@@ -1,2 +1,54 @@
-<h1>CONTACT</h1>
-<input type="text" placeholder="Enter NAME" />
+<div>
+  <h1>Contact View</h1>
+
+  <div id="contact-form">
+    <div class="box">
+      <h3>Contact Us:</h3>
+      <br />
+      <p>Phone: (858)123-1234</p>
+      <br />
+      <p>Fax: (858)243-3456</p>
+      <br />
+      <p>
+        Address: <br />
+        1354 St. Peters Dr <br />
+        Glenview, IL 60025
+      </p>
+
+      <p>
+        Email:
+        <a href="mailto:BankofSanDiego@bankofsandiego.com"
+          >BankofSanDiego@bankofsandiego.com
+        </a>
+      </p>
+    </div>
+    <form>
+      <h3>Contact Form</h3>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Name</label>
+        <input type="name" class="form-control" id="username" />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="userEmail"
+          aria-describedby="emailHelp"
+        />
+        <small class="form-text text-muted"
+          >We'll never share your email with anyone else.</small
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="exampleFormControlTextarea1">Message</label>
+        <textarea class="form-control" id="userMessage" rows="3"></textarea>
+      </div>
+
+      <button type="submit" (click)="submit()" class="btn btn-primary">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>

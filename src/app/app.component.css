@@ -1,0 +1,13 @@
+#header {
+  background-color: darkslategrey;
+  height: 20vh;
+  padding: 25px;
+  color: white;
+}
+
+.router-outlet {
+  border: 1px solid darkslategray;
+  padding: 15px;
+  height: 75vh;
+  overflow: auto;
+}

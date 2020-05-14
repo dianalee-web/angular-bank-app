@@ -1,9 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body {
   font-family: Lato;
-}
-
-button {
-  background: white;
-  width: 100px;
+  padding: 0 2.2rem;
+  /* text-align: center; */
 }

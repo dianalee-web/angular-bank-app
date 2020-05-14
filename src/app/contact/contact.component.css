@@ -1,0 +1,16 @@
+#contact-form {
+  display: flex;
+  justify-content: space-around;
+}
+
+.box {
+  /* width: 50%; */
+}
+
+h1 {
+  text-align: center;
+}
+
+button {
+  width: 100%;
+}

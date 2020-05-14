@@ -4,16 +4,8 @@
   <section class="display">
     <h3>> Welcome, {{ this.bankAccount.fname }} !!</h3>
     <h4><span></span></h4>
-    <br />
-    <br />
-    <br />
-    <br />
-    <h4>Current Balance: {{ this.bankService.account.balance | currency }}</h4>
-    <!-- <h4>Recent Transactions</h4>
-    <p *ngFor="let transaction of this.bankAccount.transactions">
-      {{ transaction.date }} {{ transaction.type | uppercase }}
-      {{ transaction.amount | currency }}
-    </p> -->
+
+    <h4>Current Balance: {{ this.bankAccount.balance | currency }}</h4>
   </section>
   <aside class="options">
     <ul class="options-list">
@@ -24,7 +16,7 @@
         />
       </li>
       <li class="options-item">
-        <button (click)="withdraw()">Make a Widthdrawl</button>
+        <button (click)="withdraw()" class="btn">Make a Widthdrawl</button>
       </li>
       <li class="options-item">
         <button (click)="deposit()" class="btn">Deposit Money</button>
@@ -32,9 +24,22 @@
       <li class="options-item">
         <button (click)="getBalance()" class="btn">Balance Inquiry</button>
       </li>
-      <li class="options-item btn">
-        <button (click)="transactions()">Transactions History</button>
+      <li class="options-item">
+        <button (click)="transactions()" class="btn">
+          Transactions History
+        </button>
       </li>
     </ul>
   </aside>
+</div>
+<div class="hidden">
+  <h4>Recent Transactions</h4>
+  <p
+    *ngFor="let transaction of this.bankAccount.transactions"
+    id="transactionsList"
+  >
+    {{ transaction.date | date }}
+    {{ transaction.type | uppercase }}
+    {{ transaction.amount | currency }}
+  </p>
 </div>

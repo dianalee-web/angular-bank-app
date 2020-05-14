@@ -8,5 +8,6 @@ import { BankService } from "../bank.service";
   styleUrls: ["./teller.component.css"],
 })
 export class TellerComponent {
-  constructor() {}
+  bankAccount = this.bankService.account;
+  constructor(public bankService: BankService) {}
 }

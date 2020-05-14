@@ -13,16 +13,47 @@ export class AtmComponent {
 
   constructor(public bankService: BankService) {}
   withdraw() {
-    this.bankAccount.balance = this.bankAccount.balance - this.userInputValue;
-    // this.userInputValue = "";
+    if (this.bankAccount.balance < Number(this.userInputValue)) {
+      alert(
+        `Insufficient funds: Enter withdrawal amount less than account balance.`
+      );
+      this.userInputValue = "";
+    } else if (this.userInputValue === "") {
+      alert("Please enter an amount to withdraw.");
+    } else {
+      this.bankAccount.balance =
+        this.bankAccount.balance - Number(this.userInputValue);
+
+      this.bankAccount.transactions.unshift({
+        date: new Date().toDateString(),
+        type: "withdrawal",
+        amount: Number(this.userInputValue),
+        currency: "usd",
+      });
+      this.userInputValue = "";
+
+      // console.log(this.bankAccount.transactions);
+    }
   }
+
   deposit() {
-    this.bankAccount.balance = this.bankAccount.balance + this.userInputValue;
+    if (this.userInputValue === "") {
+      alert("Please enter an amount to deposit.");
+    } else {
+    this.bankAccount.balance += Number(this.userInputValue);
+    this.bankAccount.transactions.unshift({
+      date: new Date().toDateString(),
+      type: "deposit",
+      amount: Number(this.userInputValue),
+      currency: "usd",
+    }
+    });
+    this.userInputValue = "";
   }
   getBalance() {
-    alert("Current Balance: " + this.bankAccount.balance);
+    alert("Current Balance: " + "$" + this.bankAccount.balance);
   }
   transactions() {
-    alert(this.bankAccount.account);
+    alert('display')
   }
 }
